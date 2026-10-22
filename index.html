@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Martin Tobias Portfolio</title>
+<meta name="description" content="Martin Tobias, Principal Solutions Engineer: enterprise AI and workflow platforms, and independent iOS developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+<style>
+html{padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px);color-scheme:light}
+html,body{margin:0}
+/* Layout: fixed identity column on the left, ruled project and experience ledger on the right. Stacks on phones. */
+:root{
+  --bg:#F5F6F7; --surface:#FFFFFF; --ink:#0E1A2B; --muted:#52606F; --rule:#D5DAE0; --accent:#0A6C74; --accent-ink:#FFFFFF; --tag:#E7EEF0;
+  --display:'Newsreader','Georgia',serif; --body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D141D; --surface:#141D29; --ink:#E8EDF2; --muted:#9AA8B6; --rule:#263343; --accent:#5CC4CC; --accent-ink:#06222A; --tag:#1B2836; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#0D141D; --surface:#141D29; --ink:#E8EDF2; --muted:#9AA8B6; --rule:#263343; --accent:#5CC4CC; --accent-ink:#06222A; --tag:#1B2836; color-scheme:dark;}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;margin:0;
+  padding-block:48px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:300px minmax(0,1fr);gap:72px;align-items:start}
+aside{position:sticky;top:32px;min-width:0}
+h1{font-family:var(--display);font-weight:600;font-size:2.6rem;line-height:1.05;margin:0 0 12px;letter-spacing:-.01em;text-wrap:balance}
+.role{font-size:1.05rem;color:var(--ink);margin:0 0 20px;text-wrap:balance}
+.lede{color:var(--muted);margin:0 0 28px;font-size:.97rem}
+.meta{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin:0 0 28px;display:grid;gap:6px}
+.meta span{display:block}
+nav{display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase}
+nav a{color:var(--muted);text-decoration:none;padding:2px 0}
+nav a:hover{color:var(--accent)}
+main{min-width:0}
+section{padding-bottom:56px}
+h2{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding:28px 0;border-bottom:1px solid var(--rule)}
+.row:last-child{border-bottom:0}
+.when{font-family:var(--mono);font-size:.78rem;color:var(--muted);padding-top:6px;line-height:1.5}
+.status{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:3px;background:var(--tag);color:var(--ink);margin-top:8px}
+.status.live{background:var(--accent);color:var(--accent-ink)}
+h3{font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.2;margin:0 0 6px;text-wrap:balance}
+h3 a{color:inherit;text-decoration-color:var(--rule)}
+h3 a:hover{color:var(--accent)}
+.tag{color:var(--muted);margin:0 0 12px}
+.row p{margin:0 0 12px;max-width:62ch}
+ul.pts{margin:0 0 14px;padding-left:18px;max-width:62ch}
+ul.pts li{margin-bottom:6px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0;list-style:none}
+.stack li{font-family:var(--mono);font-size:.74rem;background:var(--tag);padding:3px 9px;border-radius:3px}
+.links{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;font-size:.92rem}
+.skills{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px 24px;padding-top:20px}
+.skills dt{font-family:var(--mono);font-size:.78rem;color:var(--muted);padding-top:3px}
+.skills dd{margin:0}
+.btn{display:inline-block;font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:4px;margin:0 0 28px}
+.btn:hover{opacity:.9}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+footer{font-family:var(--mono);font-size:.75rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:20px}
+@media (max-width:860px){
+  .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
+  aside{position:static}
+  nav{flex-direction:row;flex-wrap:wrap;gap:6px 18px}
+  h1{font-size:2.2rem}
+}
+@media (max-width:560px){
+  body{padding-block:32px 56px}
+  .row,.skills{grid-template-columns:minmax(0,1fr);gap:6px}
+  .row{padding:24px 0}
+  .when{padding-top:0}
+}
+@media (prefers-reduced-motion:no-preference){a,nav a{transition:color .15s}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <h1>Martin Tobias</h1>
+    <p class="role">Principal Solutions Engineer, enterprise AI and workflow platforms</p>
+    <p class="lede">Twenty years of pre-sales engineering for Fortune 500 accounts: discovery, solution design, and the proof of concept that proves the value. I also design, build and ship my own LLM-powered iOS apps.</p>
+    <div class="meta">
+      <span>Greater Boston, Massachusetts</span>
+      <span>mtobias2000@hotmail.com</span>
+      <span><a href="https://linkedin.com/in/martin-tobias">linkedin.com/in/martin-tobias</a></span>
+    </div>
+    <a class="btn" href="Martin_Tobias_Resume.pdf" download>Download resume (PDF)</a>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#work">Products I built</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#skills">Expertise</a>
+      <a href="#education">Education</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <article class="row">
+        <div class="when">2025</div>
+        <div>
+          <h3>Solutions Advisor, Bria Generative AI</h3>
+          <p class="tag">Enterprise AI engagements for P&amp;G, Publicis and Getty Images</p>
+          <p>Owned the technical side of each engagement, from discovery and solution architecture through executive presentations, proofs of concept, API integration, governance and production readiness.</p>
+          <ul class="pts">
+            <li>Architected GPU-accelerated inference pipelines and enterprise AI workflows, tuning latency, throughput and scalability.</li>
+            <li>Designed AI governance frameworks covering brand compliance, responsible AI controls, prompt management and content moderation.</li>
+            <li>Built benchmarking environments that showed real-time inference metrics in Grafana to speed up technical validation.</li>
+            <li>Carried customer requirements back to Product and Engineering, and built Figma integration prototypes to align customers early.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="when">2022 to 2025</div>
+        <div>
+          <h3>Rockwell Automation</h3>
+          <p class="tag">Solution Engineer Manager (2023 to 2025) &middot; Smart Experiences Technical Manager (2022 to 2023)</p>
+          <p>Managed a team of 8 Solutions Engineers on strategic enterprise accounts while staying hands-on in the largest pursuits.</p>
+          <ul class="pts">
+            <li>Built the SE playbook from the ground up, standardizing discovery, demo and technical validation so repeat deal types moved faster.</li>
+            <li>Led POC design and delivery on the largest pursuits and partnered with Sales leadership from first discovery call to close.</li>
+            <li>Designed architectures for brownfield and greenfield plants, connecting plant-floor and enterprise data to business results.</li>
+            <li>Led a team of 3 engineers building AR, digital manufacturing and visualization experiences with Unity, Vuforia and Emulate3D, integrated with PLM, ERP and MES systems.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="when">2013 to 2022</div>
+        <div>
+          <h3>PTC</h3>
+          <p class="tag">Principal AR CoE Field Engineer (2018 to 2022) &middot; IoT Senior Technical Sales Engineer (2013 to 2018)</p>
+          <p>Delivered 30+ enterprise workshops, demonstrations and technical validations for global manufacturing and industrial customers.</p>
+          <ul class="pts">
+            <li>Converted technical evaluations into production deployments through needs analysis, solution design and ROI articulation.</li>
+            <li>Aligned SaaS platforms with AWS and Azure environments, and applied machine learning to predictive maintenance and anomaly detection in IoT deployments.</li>
+            <li>Ran executive demonstrations for C-suite and VP stakeholders, and mentored internal teams and partners across the region.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="when">2006 to 2013</div>
+        <div>
+          <h3>Axeda (acquired by PTC)</h3>
+          <p class="tag">Technical Sales and Support Engineer</p>
+          <p>Resolved high-priority escalations across firmware, drivers and application layers for connected-device platforms, built internal tooling to speed up resolution, and presented at customer sites and industry events.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="work">
+      <h2>Products I built</h2>
+
+      <article class="row">
+        <div class="when">2025 to present<br><span class="status live">Live on the App Store</span></div>
+        <div>
+          <h3><a href="https://themaintainit.app">Maintain--It</a></h3>
+          <p class="tag">Home and vehicle maintenance tracker, founder and sole developer</p>
+          <p>I took it from idea to production: product strategy, UX, mobile and backend development, LLM API orchestration, monetization, App Store releases and customer acquisition.</p>
+          <ul class="pts">
+            <li>Share a whole home or vehicle with others. Owner and editor roles, task assignment, and a record of who completed each task and when.</li>
+            <li>Due dates sync to Apple Calendar, Google Calendar and Outlook through a subscribed feed.</li>
+            <li>AI maintenance guidance served through a Firebase Cloud Function so the model key never reaches the device.</li>
+            <li>Subscriptions through RevenueCat, VIN scanning, Carfax integration, multi-property support and a gift-code channel for real estate agents.</li>
+            <li>Versioned cloud backup, over-the-air updates, and analytics that track onboarding and retention.</li>
+          </ul>
+          <ul class="stack"><li>React Native</li><li>Expo</li><li>Firebase</li><li>Cloud Functions</li><li>RevenueCat</li><li>LLM APIs</li></ul>
+          <div class="links"><a href="https://apps.apple.com/app/id6755452245">App Store</a><a href="https://themaintainit.app">themaintainit.app</a></div>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="when">2025 to present<br><span class="status live">Live on the App Store</span></div>
+        <div>
+          <h3>ChefMeThat</h3>
+          <p class="tag">AI cooking and nutrition app</p>
+          <p>Turns what is in your kitchen and your dietary goals into recipes and nutrition guidance.</p>
+          <ul class="stack"><li>React Native</li><li>Firebase</li><li>LLM integration</li></ul>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="when">2025</div>
+        <div>
+          <h3>Bria FIBO Hackathon entry</h3>
+          <p class="tag">Generative AI application</p>
+          <p>Built an application for storyboard and campaign creation to explore practical uses of generative AI in creative workflows.</p>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="when">Also building</div>
+        <div>
+          <h3>Tovali, WOD-It, Shalom Hebrew, AppReady Studio</h3>
+          <p class="tag">Family caregiving &middot; CrossFit gym management &middot; Hebrew learning &middot; App Store asset tool</p>
+          <p>More iOS apps and web tools in development or early release. <a href="https://appready-studio.pages.dev">AppReady Studio</a> builds App Store screenshots and listing assets in the browser.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="highlights">
+      <h2>Highlights</h2>
+      <article class="row">
+        <div class="when">Selected</div>
+        <div>
+          <ul class="pts">
+            <li>Influenced multimillion dollar enterprise pipeline across AI, SaaS, IoT, AR and digital transformation platforms.</li>
+            <li>Delivered 30+ workshops, technical validations and POCs for global customers.</li>
+            <li>Advised CTO, CIO, CMO and VP Engineering stakeholders on AI governance, enterprise architecture and transformation.</li>
+            <li>Built repeatable discovery, demo and POC methods that scaled sales execution.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Expertise</h2>
+      <dl class="skills">
+        <dt>Pre-sales</dt><dd>Technical discovery, executive value alignment, POC and technical validation, executive presentations, SE leadership</dd>
+        <dt>AI</dt><dd>LLMs, VLMs, generative AI, machine learning, MCP, agentic AI, n8n, ComfyUI, Hugging Face</dd>
+        <dt>Cloud and data</dt><dd>AWS, Azure, Google Cloud, REST, OAuth, SAML, SSO, SQL, Grafana, Power BI</dd>
+        <dt>Industrial</dt><dd>PLM, ERP, MES, IoT, ThingWorx, Cognite, Kepware OPC-UA, digital thread</dd>
+        <dt>Build</dt><dd>Python, JavaScript, Java, Node.js, React Native, Git; Unity, Unreal Engine, Vuforia, Figma</dd>
+      </dl>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article class="row">
+        <div class="when">&nbsp;</div>
+        <div>
+          <h3>University of Cape Town</h3>
+          <p class="tag">Marketing Management and Information Systems</p>
+          <p>Microsoft Certified Professional &middot; Oracle Certified DBA &middot; Languages: English, Hebrew</p>
+        </div>
+      </article>
+    </section>
+
+    <footer>Martin Tobias &middot; Greater Boston, Massachusetts</footer>
+  </main>
+</div>
+</body>
+</html>
